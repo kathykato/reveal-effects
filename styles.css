@@ -1,0 +1,220 @@
+/* Demo styles */
+@import url("https://fonts.googleapis.com/css?family=Roboto:300,700");
+* {
+  box-sizing: border-box;
+}
+*::before, *::after {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Roboto', sans-serif;
+  font-size: 1.125rem;
+  font-weight: 300;
+  line-height: 1.6;
+  margin: 0;
+  padding: 0;
+  color: black;
+  background: white;
+}
+
+h1, h2 {
+  line-height: 1.2;
+  font-weight: 700;
+}
+
+h1 {
+  font-size: 3rem;
+  margin: 1rem 0;
+}
+
+h2 {
+  font-size: 2.5rem;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+p {
+  text-align: left;
+}
+
+section {
+  padding: 4rem 0;
+}
+
+.container {
+  margin: auto;
+  padding: 0 1rem;
+  max-width: 70rem;
+  width: 100%;
+}
+
+.dog-text {
+  text-align: center;
+}
+
+/* Grid */
+.row {
+  display: flex;
+  flex-direction: column;
+  flex-flow: row wrap;
+}
+.row > [class*="column-"] {
+  display: block;
+  padding: 1rem;
+}
+
+.column-full {
+  flex-basis: 100%;
+  max-width: 100%;
+}
+
+.column-half {
+  flex-basis: 50%;
+  max-width: 50%;
+}
+
+/* Reveal block */
+.reveal-holder {
+  position: relative;
+  display: inline-block;
+  overflow: hidden;
+}
+.reveal-holder .reveal-block {
+  position: absolute;
+  top: 0;
+  width: 100%;
+  height: 101%;
+  background: white;
+}
+.reveal-holder .reveal-block::before {
+  position: absolute;
+  content: '';
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: lightgray;
+  transition-property: -webkit-transform;
+  transition-property: transform;
+  transition-property: transform, -webkit-transform;
+  transition-duration: 0.5s;
+}
+
+.reveal-block.gradient::before {
+  background: linear-gradient(pink, coral);
+}
+
+.reveal-block.extra {
+  background: lightgray;
+}
+.reveal-block.extra::before {
+  background: linear-gradient(pink, coral);
+}
+
+.reveal-block.top.aos-animate::before,
+.reveal-block.bottom.aos-animate::before {
+  -webkit-transform: scaleY(1);
+          transform: scaleY(1);
+}
+
+.reveal-block.left.aos-animate::before,
+.reveal-block.right.aos-animate::before {
+  -webkit-transform: scaleX(1);
+          transform: scaleX(1);
+}
+
+.reveal-block.top::before {
+  -webkit-transform: scaleY(0);
+          transform: scaleY(0);
+  -webkit-transform-origin: 0% 100%;
+          transform-origin: 0% 100%;
+}
+
+.reveal-block.left::before {
+  -webkit-transform: scaleX(0);
+          transform: scaleX(0);
+  -webkit-transform-origin: 100% 0%;
+          transform-origin: 100% 0%;
+}
+
+.reveal-block.right::before {
+  -webkit-transform: scaleX(0);
+          transform: scaleX(0);
+  -webkit-transform-origin: 0% 100%;
+          transform-origin: 0% 100%;
+}
+
+.reveal-block.bottom::before {
+  -webkit-transform: scaleY(0);
+          transform: scaleY(0);
+  -webkit-transform-origin: 100% 0%;
+          transform-origin: 100% 0%;
+}
+
+/* AOS animate */
+[data-aos="reveal-top"],
+[data-aos="reveal-left"],
+[data-aos="reveal-right"],
+[data-aos="reveal-bottom"] {
+  transition-property: -webkit-transform;
+  transition-property: transform;
+  transition-property: transform, -webkit-transform;
+  transition-delay: 0.5s;
+}
+
+[data-aos="reveal-top"] {
+  -webkit-transform: scaleY(1);
+          transform: scaleY(1);
+}
+[data-aos="reveal-top"].aos-animate {
+  -webkit-transform: scaleY(0);
+          transform: scaleY(0);
+  -webkit-transform-origin: 100% 0%;
+          transform-origin: 100% 0%;
+}
+
+[data-aos="reveal-left"] {
+  -webkit-transform: scaleX(1);
+          transform: scaleX(1);
+}
+[data-aos="reveal-left"].aos-animate {
+  -webkit-transform: scaleX(0);
+          transform: scaleX(0);
+  -webkit-transform-origin: 0% 100%;
+          transform-origin: 0% 100%;
+}
+
+[data-aos="reveal-right"] {
+  -webkit-transform: scaleX(1);
+          transform: scaleX(1);
+}
+[data-aos="reveal-right"].aos-animate {
+  -webkit-transform: scaleX(0);
+          transform: scaleX(0);
+  -webkit-transform-origin: 100% 0%;
+          transform-origin: 100% 0%;
+}
+
+[data-aos="reveal-bottom"] {
+  -webkit-transform: scaleY(1);
+          transform: scaleY(1);
+}
+[data-aos="reveal-bottom"].aos-animate {
+  -webkit-transform: scaleY(0);
+          transform: scaleY(0);
+  -webkit-transform-origin: 0% 100%;
+          transform-origin: 0% 100%;
+}
+
+[data-aos="reveal-item"] {
+  visibility: hidden;
+  transition-property: visibility;
+  transition-duration: 0s;
+}
+[data-aos="reveal-item"].aos-animate {
+  visibility: visible;
+}
