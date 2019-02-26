@@ -24,11 +24,16 @@ h1, h2 {
 }
 
 h1 {
+  font-size: 4rem;
+  margin: 0.5rem 0;
+}
+
+h2 {
   font-size: 3rem;
   margin: 1rem 0;
 }
 
-h2 {
+h3 {
   font-size: 2.5rem;
 }
 
@@ -50,6 +55,17 @@ section {
   padding: 0 1rem;
   max-width: 70rem;
   width: 100%;
+}
+
+.intro-text {
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  padding: 0;
+  min-height: 100vh;
+}
+.intro-text .row > [class*="column-"] {
+  padding: 0;
 }
 
 .dog-text {
@@ -105,14 +121,18 @@ section {
 }
 
 .reveal-block.gradient::before {
-  background: linear-gradient(pink, coral);
+  background: linear-gradient(to left, #eebf56, #f46ca3);
+}
+
+.reveal-block.gradient-two::before {
+  background: linear-gradient(to left, #1b9edf, #af74c3);
 }
 
 .reveal-block.extra {
-  background: lightgray;
+  background: #1b9edf;
 }
 .reveal-block.extra::before {
-  background: linear-gradient(pink, coral);
+  background: #af74c3;
 }
 
 .reveal-block.top.aos-animate::before,
